@@ -1,0 +1,16 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: HourlyBalanceCheck
+spec:
+  schedule: "0 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: balance_monitor
+            image: balance_monitor
+            env:
+              - name: SENDGRID_API_KEY
+                value: xxx

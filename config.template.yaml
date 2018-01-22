@@ -1,0 +1,17 @@
+# The block explorer
+explorer:
+  name: blockcypher
+  url_pattern: "https://live.blockcypher.com/ltc/address/%s/"
+  regexp: "<span class=\"dash-label\">Balance</span>[^0-9\\.]*([0-9\\.]*)"
+# Minimum threshold to alert 
+min_value: 0.05
+# List of keys to monitor
+ltc_keys:
+- address: LXXXX
+  name: site-a
+- address: LXXX
+  name: site-b
+# Where to send alerts
+email_alert:
+  from: balance.monitor@test.com
+  to: you@you.com

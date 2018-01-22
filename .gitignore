@@ -1,0 +1,5 @@
+config.yaml
+.env
+.DS_Store
+*.swp
+main
