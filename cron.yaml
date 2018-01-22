@@ -1,7 +1,7 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: HourlyBalanceCheck
+  name: hourly-balance-check
 spec:
   schedule: "0 * * * *"
   jobTemplate:
@@ -9,8 +9,10 @@ spec:
       template:
         spec:
           containers:
-          - name: balance_monitor
-            image: balance_monitor
+          - name: balance-monitor
+            image: gcr.io/PROJECT_NAME/balance_monitor:master
             env:
               - name: SENDGRID_API_KEY
                 value: xxx
+          restartPolicy: Never
+                
