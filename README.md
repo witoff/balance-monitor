@@ -26,12 +26,14 @@ docker run \
 First, publish your image to your favorite location (e.g. dockerhub, container registry) and update `containers.image` in cron.yaml to match.
 
 ```shell 
-# Publish 
+# Publish to GCP Container Registry
+PROJECT_ID=...
 IMAGE="gcr.io/${PROJECT_ID}/balance_monitor:master"
 gcloud docker -- tag balance_monitor ${IMAGE}
 gcloud docker -- push ${IMAGE}
 
-# Deploy with Kubernetes
+# Update template & deploy with kubernetes
+cp cron.template.yaml cron.yaml
 kubectl create -f cron.yaml
 ```
 

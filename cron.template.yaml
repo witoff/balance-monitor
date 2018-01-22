@@ -10,7 +10,7 @@ spec:
         spec:
           containers:
           - name: balance-monitor
-            image: gcr.io/PROJECT_NAME/balance_monitor:master
+            image: gcr.io/PROJECT/balance_monitor:master
             env:
               - name: SENDGRID_API_KEY
                 value: xxx

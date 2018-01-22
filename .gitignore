@@ -1,4 +1,5 @@
 config.yaml
+cron.yaml
 .env
 .DS_Store
 *.swp
